@@ -7,12 +7,18 @@ version:
   revision: "6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e"
   channel: "stable"
 
-project_type: app
+project_type: plugin
 
 # Tracks metadata for the flutter migrate command
 migration:
   platforms:
     - platform: root
+      create_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
+      base_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
+    - platform: android
+      create_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
+      base_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
+    - platform: ios
       create_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
       base_revision: 6c4930c4ac86fb286f30e31d0ec8bffbcbb9953e
     - platform: macos

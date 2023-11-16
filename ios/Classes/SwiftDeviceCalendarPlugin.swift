@@ -853,12 +853,10 @@ public class SwiftDeviceCalendarPlugin: NSObject, FlutterPlugin, EKEventViewDele
             ekEvent!.location = location
 
             // Create and add URL object only when if the input string is not empty or nil
-            if let urlCheck = url, !urlCheck.isEmpty {
-                if let iosUrl = URL(string: url ?? "") {
-                    ekEvent?.url = iosUrl
-                } else if let data = urlCheck.data(using: String.Encoding.utf8), let dataUrl = URL(dataRepresentation: data, relativeTo: nil) {
-                    ekEvent?.url = dataUrl
-                }
+            if let urlCheck = url, !urlCheck.isEmpty,
+               let data = urlCheck.data(using: String.Encoding.utf8),
+                let dataUrl = URL(dataRepresentation: data, relativeTo: nil) {
+                ekEvent?.url = dataUrl
             } else {
                 ekEvent?.url = nil
             }
